@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ads_button" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-Ma-HH0">
+                                <rect key="frame" x="45" y="259" width="284" height="180"/>
+                                <color key="backgroundColor" white="0.82379357993197277" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9wY-Ma-HH0" secondAttribute="height" multiplier="71:45" id="FHY-Rm-ZNo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Inititalize Unity Ads">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.83529411760000005" green="0.94901960780000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6n-8j-8ro"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fx9-Yf-gJz">
+                                <rect key="frame" x="123" y="206" width="129" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="gameIdEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="vWv-It-qUK"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-eN-26Z">
+                                <rect key="frame" x="155" y="177" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Completed views: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-ei-Mg2">
+                                <rect key="frame" x="112" y="458" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gfn-ei-Mg2" secondAttribute="bottom" constant="20" id="49j-ua-tPa"/>
+                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9FN-Zb-SxC"/>
+                            <constraint firstItem="Jhr-eN-26Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CTL-i3-qpc"/>
+                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KGW-xN-NOX"/>
+                            <constraint firstItem="gfn-ei-Mg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MEY-tl-Uwa"/>
+                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Thj-Zy-UBy"/>
+                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="top" secondItem="fx9-Yf-gJz" secondAttribute="bottom" constant="30" id="mog-kr-2Jl"/>
+                            <constraint firstItem="fx9-Yf-gJz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oNj-Yw-X4g"/>
+                            <constraint firstItem="fx9-Yf-gJz" firstAttribute="top" secondItem="Jhr-eN-26Z" secondAttribute="bottom" constant="8" id="pIw-zE-bIa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adsButton" destination="9wY-Ma-HH0" id="18V-Jk-cdk"/>
+                        <outlet property="completedViewLabel" destination="gfn-ei-Mg2" id="MW0-U1-CMN"/>
+                        <outlet property="gameIdLabel" destination="Jhr-eN-26Z" id="J3e-ot-kIG"/>
+                        <outlet property="gameIdTextField" destination="fx9-Yf-gJz" id="p1u-Xj-RNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
