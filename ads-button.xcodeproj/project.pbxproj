@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2944D91EDDE67B008C3E89 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2944D81EDDE67B008C3E89 /* UnityAds.framework */; };
 		1FBADF861E5E4F7200BBDD1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBADF851E5E4F7200BBDD1B /* AppDelegate.swift */; };
 		1FBADF881E5E4F7200BBDD1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBADF871E5E4F7200BBDD1B /* ViewController.swift */; };
 		1FBADF8B1E5E4F7200BBDD1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBADF891E5E4F7200BBDD1B /* Main.storyboard */; };
 		1FBADF8D1E5E4F7200BBDD1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBADF8C1E5E4F7200BBDD1B /* Assets.xcassets */; };
 		1FBADF901E5E4F7200BBDD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBADF8E1E5E4F7200BBDD1B /* LaunchScreen.storyboard */; };
+		1FF373D31EE6286A0001DA16 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF373D21EE6286A0001DA16 /* UnityAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F2944D81EDDE67B008C3E89 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		1FBADF821E5E4F7200BBDD1B /* ads-button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ads-button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBADF851E5E4F7200BBDD1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBADF871E5E4F7200BBDD1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +23,7 @@
 		1FBADF8C1E5E4F7200BBDD1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBADF8F1E5E4F7200BBDD1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBADF911E5E4F7200BBDD1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FF373D21EE6286A0001DA16 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2944D91EDDE67B008C3E89 /* UnityAds.framework in Frameworks */,
+				1FF373D31EE6286A0001DA16 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +43,7 @@
 			children = (
 				1FBADF841E5E4F7200BBDD1B /* ads-button */,
 				1FBADF831E5E4F7200BBDD1B /* Products */,
-				1F2944D81EDDE67B008C3E89 /* UnityAds.framework */,
+				1FF373D21EE6286A0001DA16 /* UnityAds.framework */,
 			);
 			sourceTree = "<group>";
 		};

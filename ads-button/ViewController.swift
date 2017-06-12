@@ -17,10 +17,10 @@ class ViewController: UIViewController, UnityAdsDelegate {
     @IBOutlet weak var completedViewLabel: UILabel!
     @IBOutlet weak var gameIdLabel: UILabel!
     
-    var gameId = "1016671"
-    var placement = ""
-    var initialized = false
-    var completedViews = 0
+    var gameId:String = "1016671"
+    var placement:String = ""
+    var initialized:Bool = false
+    var completedViews:Int = 0
     
     let green = UIColor.init(colorLiteralRed: 0.9, green: 1.0, blue: 0.9, alpha: 1.0)
     let red = UIColor.init(colorLiteralRed: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
@@ -33,20 +33,7 @@ class ViewController: UIViewController, UnityAdsDelegate {
         }
     
     @IBAction func gameIdEntered(_ sender: Any) {
-        gameIdTextField.resignFirstResponder()
-        
-        if(gameIdTextField.text == ""){
-            gameId = "1016671";
-            print("game ID set to \(gameId)")
-            adsButton.setTitle("Inititalize test ID", for: .normal)
-            gameIdTextField.text = "(default)"
-            gameIdTextField.clearsOnBeginEditing = true
-        }else{
-            gameId = gameIdTextField.text!;
-            adsButton.setTitle("Inititalize ID \"\(gameId)\"", for: .normal)
-            print("game ID set to \(gameId)")
-            gameIdTextField.clearsOnBeginEditing = false
-        }
+        return
     }
     
     func updateAdsButton () {
@@ -57,28 +44,36 @@ class ViewController: UIViewController, UnityAdsDelegate {
 
     @IBAction func showAd(_ sender: Any) {
         if(!initialized){
+            if(gameIdTextField.text == ""){
+                gameIdTextField.clearsOnBeginEditing = true
+            }else{
+                gameId = gameIdTextField.text!;
+                print("game ID set to \(gameId)")
+            }
+            
             UnityAds.initialize(gameId, delegate: self)
             initialized = true
             adsButton.isUserInteractionEnabled = false
+            
             updateButtonReadyState()
+            
             gameIdTextField.isHidden = true;
             gameIdTextField.resignFirstResponder()
             gameIdLabel.text = "Using Game ID \(gameId)"
+            
             return
-        }
-        
-        if(placement == ""){
-            if(UnityAds.isReady()){
-                UnityAds.show(self)
-                print("Showing ad with default placement")
-            }
+            
         }else{
             if(UnityAds.isReady()){
-                UnityAds.show(self, placementId: placement)
-                print("Showing ad with placement ID: \(placement)")
+                if(placement == ""){
+                    UnityAds.show(self)
+                    print("Showing ad with default placement")
+                }else{
+                    UnityAds.show(self, placementId: placement)
+                    print("Showing ad with placement ID: \(placement)")
+                }
             }
         }
-        
     }
     
     func updateButtonReadyState(){
@@ -98,7 +93,7 @@ class ViewController: UIViewController, UnityAdsDelegate {
     }
     
     func unityAdsDidError(_ error: UnityAdsError, withMessage message: String) {
-        
+        print("error 88888888888")
     }
     
     func unityAdsDidFinish(_ placementId: String, with state: UnityAdsFinishState) {
