@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,6 +29,7 @@
                                 <color key="backgroundColor" white="0.82379357993197277" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9wY-Ma-HH0" secondAttribute="height" multiplier="71:45" id="FHY-Rm-ZNo"/>
+                                    <constraint firstAttribute="width" constant="300" id="PVn-If-gJW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Inititalize Unity Ads">
@@ -38,7 +40,7 @@
                                     <action selector="showAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6n-8j-8ro"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fx9-Yf-gJz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1016671" borderStyle="bezel" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fx9-Yf-gJz">
                                 <rect key="frame" x="123" y="206" width="129" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -47,14 +49,27 @@
                                     <action selector="gameIdEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="vWv-It-qUK"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-eN-26Z">
-                                <rect key="frame" x="155" y="177" width="66" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-eN-26Z">
+                                <rect key="frame" x="0.0" y="122" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.91268929300000001" green="1" blue="0.98344969829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ehk-XO-eoa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KFc-0Q-zFU">
+                                <rect key="frame" x="310" y="35" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client side test mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-j8-FCh">
+                                <rect key="frame" x="140" y="40" width="162" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Completed views: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-ei-Mg2">
-                                <rect key="frame" x="112" y="458" width="151" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed views: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfn-ei-Mg2">
+                                <rect key="frame" x="112" y="209.5" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,15 +77,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gfn-ei-Mg2" secondAttribute="bottom" constant="20" id="49j-ua-tPa"/>
                             <constraint firstItem="9wY-Ma-HH0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9FN-Zb-SxC"/>
                             <constraint firstItem="Jhr-eN-26Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CTL-i3-qpc"/>
                             <constraint firstItem="9wY-Ma-HH0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KGW-xN-NOX"/>
                             <constraint firstItem="gfn-ei-Mg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MEY-tl-Uwa"/>
-                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Thj-Zy-UBy"/>
+                            <constraint firstItem="KFc-0Q-zFU" firstAttribute="leading" secondItem="nOA-j8-FCh" secondAttribute="trailing" constant="8" id="Stu-M2-Zzk"/>
+                            <constraint firstItem="KFc-0Q-zFU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="U2Q-AQ-iN7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KFc-0Q-zFU" secondAttribute="trailing" id="eGt-hJ-jYo"/>
+                            <constraint firstItem="Jhr-eN-26Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fNk-81-F4S"/>
+                            <constraint firstItem="fx9-Yf-gJz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="mT0-IJ-bv8"/>
                             <constraint firstItem="9wY-Ma-HH0" firstAttribute="top" secondItem="fx9-Yf-gJz" secondAttribute="bottom" constant="30" id="mog-kr-2Jl"/>
                             <constraint firstItem="fx9-Yf-gJz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oNj-Yw-X4g"/>
-                            <constraint firstItem="fx9-Yf-gJz" firstAttribute="top" secondItem="Jhr-eN-26Z" secondAttribute="bottom" constant="8" id="pIw-zE-bIa"/>
+                            <constraint firstItem="fx9-Yf-gJz" firstAttribute="top" secondItem="Jhr-eN-26Z" secondAttribute="bottom" constant="25" id="pIw-zE-bIa"/>
+                            <constraint firstItem="nOA-j8-FCh" firstAttribute="centerY" secondItem="KFc-0Q-zFU" secondAttribute="centerY" id="utE-5q-rAG"/>
+                            <constraint firstItem="9wY-Ma-HH0" firstAttribute="top" secondItem="gfn-ei-Mg2" secondAttribute="bottom" constant="8" id="w2c-rX-Vhc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -78,6 +98,7 @@
                         <outlet property="completedViewLabel" destination="gfn-ei-Mg2" id="MW0-U1-CMN"/>
                         <outlet property="gameIdLabel" destination="Jhr-eN-26Z" id="J3e-ot-kIG"/>
                         <outlet property="gameIdTextField" destination="fx9-Yf-gJz" id="p1u-Xj-RNX"/>
+                        <outlet property="testModeToggle" destination="KFc-0Q-zFU" id="ifY-1s-jpJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

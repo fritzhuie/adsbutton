@@ -8,14 +8,13 @@
 import UIKit
 import UnityAds
 
-import AVKit
-
 class ViewController: UIViewController, UnityAdsDelegate {
 
     @IBOutlet weak var adsButton: UIButton!
     @IBOutlet weak var gameIdTextField: UITextField!
     @IBOutlet weak var completedViewLabel: UILabel!
     @IBOutlet weak var gameIdLabel: UILabel!
+    @IBOutlet weak var testModeToggle: UISwitch!
     
     var gameId:String = "1016671"
     var placement:String = ""
@@ -29,21 +28,39 @@ class ViewController: UIViewController, UnityAdsDelegate {
         super.viewDidLoad()
         adsButton.isEnabled = true
         adsButton.setTitle("Inititalize test ID", for: .normal)
-        gameIdTextField.text = "(default)"
-        }
+        gameIdTextField.text = "\(gameId)"
+        completedViewLabel.isHidden = true
+    }
     
     @IBAction func gameIdEntered(_ sender: Any) {
         return
     }
     
-    func updateAdsButton () {
-        if(initialized) {
-            updateButtonReadyState()
+    func updateStatusText() {
+        switch UnityAds.getPlacementState() {
+        case .disabled:
+            gameIdLabel.text = "Unity Ads not enabled"
+        case .noFill:
+            gameIdLabel.text = "Server returned no fill"
+        case .notAvailable:
+            gameIdLabel.text = "Unity Ads not available"
+        case .ready:
+            gameIdLabel.text = "Unity Ads is ready"
+        case .waiting:
+            gameIdLabel.text = "Waiting . . ."
+        default:
+            gameIdLabel.text = "Status error"
         }
     }
+    
+    
 
     @IBAction func showAd(_ sender: Any) {
         if(!initialized){
+            
+            _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateStatusText), userInfo: nil, repeats: true)
+            
+
             if(gameIdTextField.text == ""){
                 gameIdTextField.clearsOnBeginEditing = true
             }else{
@@ -51,7 +68,12 @@ class ViewController: UIViewController, UnityAdsDelegate {
                 print("game ID set to \(gameId)")
             }
             
-            UnityAds.initialize(gameId, delegate: self)
+            if(testModeToggle.isOn){
+                UnityAds.initialize(gameId, delegate: self, testMode: true)
+            }else{
+                UnityAds.initialize(gameId, delegate: self, testMode: false)
+            }
+            
             initialized = true
             adsButton.isUserInteractionEnabled = false
             
@@ -59,7 +81,7 @@ class ViewController: UIViewController, UnityAdsDelegate {
             
             gameIdTextField.isHidden = true;
             gameIdTextField.resignFirstResponder()
-            gameIdLabel.text = "Using Game ID \(gameId)"
+            gameIdLabel.text = "Inititalizing with \(gameId)"
             
             return
             
@@ -82,7 +104,7 @@ class ViewController: UIViewController, UnityAdsDelegate {
             adsButton.backgroundColor = green;
             adsButton.isUserInteractionEnabled = true
         }else{
-            adsButton.setTitle("Loading ...", for: .normal)
+            adsButton.setTitle("Inititalizing \(gameId)", for: .normal)
             adsButton.backgroundColor = red;
             adsButton.isUserInteractionEnabled = false
         }
@@ -90,10 +112,11 @@ class ViewController: UIViewController, UnityAdsDelegate {
     
     func unityAdsReady(_ placementId: String) {
         updateButtonReadyState()
+        completedViewLabel.isHidden = false
     }
     
     func unityAdsDidError(_ error: UnityAdsError, withMessage message: String) {
-        print("error 88888888888")
+
     }
     
     func unityAdsDidFinish(_ placementId: String, with state: UnityAdsFinishState) {
