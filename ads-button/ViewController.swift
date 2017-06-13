@@ -29,6 +29,7 @@ class ViewController: UIViewController, UnityAdsDelegate {
         adsButton.isEnabled = true
         adsButton.setTitle("Inititalize test ID", for: .normal)
         gameIdTextField.text = "\(gameId)"
+        
         completedViewLabel.isHidden = true
     }
     
