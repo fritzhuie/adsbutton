@@ -100,6 +100,7 @@
                         <outlet property="completedViewLabel" destination="gfn-ei-Mg2" id="MW0-U1-CMN"/>
                         <outlet property="gameIdLabel" destination="Jhr-eN-26Z" id="J3e-ot-kIG"/>
                         <outlet property="gameIdTextField" destination="fx9-Yf-gJz" id="p1u-Xj-RNX"/>
+                        <outlet property="testModeLabel" destination="nOA-j8-FCh" id="q0B-GL-wOW"/>
                         <outlet property="testModeToggle" destination="KFc-0Q-zFU" id="ifY-1s-jpJ"/>
                     </connections>
                 </viewController>

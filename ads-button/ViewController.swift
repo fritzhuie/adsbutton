@@ -15,11 +15,13 @@ class ViewController: UIViewController, UnityAdsDelegate {
     @IBOutlet weak var completedViewLabel: UILabel!
     @IBOutlet weak var gameIdLabel: UILabel!
     @IBOutlet weak var testModeToggle: UISwitch!
+    @IBOutlet weak var testModeLabel: UILabel!
     
     var gameId:String = "1016671"
     var placement:String = ""
     var initialized:Bool = false
     var completedViews:Int = 0
+    var allowRotation:Bool = true
     
     let green = UIColor.init(colorLiteralRed: 0.9, green: 1.0, blue: 0.9, alpha: 1.0)
     let red = UIColor.init(colorLiteralRed: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
@@ -31,6 +33,14 @@ class ViewController: UIViewController, UnityAdsDelegate {
         gameIdTextField.text = "\(gameId)"
         
         completedViewLabel.isHidden = true
+    }
+    
+    override var shouldAutorotate: Bool {
+        return allowRotation
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.all
     }
     
     @IBAction func gameIdEntered(_ sender: Any) {
@@ -53,15 +63,16 @@ class ViewController: UIViewController, UnityAdsDelegate {
             gameIdLabel.text = "Status error"
         }
     }
-    
-    
 
     @IBAction func showAd(_ sender: Any) {
         if(!initialized){
             
             _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateStatusText), userInfo: nil, repeats: true)
             
-
+            testModeToggle.isHidden = true
+            testModeLabel.text = testModeToggle.isOn ? "Test mode: Enabled" : "Test mode: Disabled"
+            allowRotation = false
+            
             if(gameIdTextField.text == ""){
                 gameIdTextField.clearsOnBeginEditing = true
             }else{
